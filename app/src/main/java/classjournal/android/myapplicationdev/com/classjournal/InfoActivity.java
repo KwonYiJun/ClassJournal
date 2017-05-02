@@ -29,6 +29,8 @@ public class InfoActivity extends AppCompatActivity {
     ArrayList<dailyGrade> dG;
     Button btnInfo, btnEmail, btnAdd;
 
+    String message;
+
     int sizeOfWeeks;
     int requestCodeForGrade = 1;
 
@@ -73,24 +75,31 @@ public class InfoActivity extends AppCompatActivity {
             }
         });
 
+
         btnEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                for (int i = 0; i < dG.size(); i++) {
+                    message += "Week " + dG.get(i).getWeek() + ": DG: " + dG.get(i).getDg() + "\n";
+                }
+
+                // The action you want this intent to do;
+                // ACTION_SEND is used to indicate sending text
                 Intent email = new Intent(Intent.ACTION_SEND);
+                // Put essentials like email address, subject & body text
                 email.putExtra(Intent.EXTRA_EMAIL,
                         new String[]{"jason_lim@rp.edu.sg"});
                 email.putExtra(Intent.EXTRA_SUBJECT,
                         "Test Email from C347");
                 email.putExtra(Intent.EXTRA_TEXT,
-                        "Hi faci \n\n I am.... \n Please read my remarks so far, thank you! \n" +
-                                "" );
+                        message);
                 // This MIME type indicates email
                 email.setType("message/rfc822");
                 // createChooser shows user a list of app that can handle
                 // this MIME type, which is, email
                 startActivity(Intent.createChooser(email,
                         "Choose an Email client :"));
-
             }
         });
     }
