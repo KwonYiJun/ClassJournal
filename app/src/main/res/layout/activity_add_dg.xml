@@ -8,7 +8,7 @@
     tools:context="classjournal.android.myapplicationdev.com.classjournal.addDg">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewWeek"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/holo_blue_light"
@@ -26,6 +26,7 @@
             app:srcCompat="@drawable/dg" />
 
         <RadioGroup
+            android:id="@+id/rg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
@@ -75,7 +76,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/Submit"
+        android:id="@+id/buttonSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Submit" />
