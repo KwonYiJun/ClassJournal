@@ -36,6 +36,8 @@ public class DGAdapter extends ArrayAdapter<dailyGrade> {
         // "Inflate" the row.xml as the layout for the View object
         View rowView = inflater.inflate(R.layout.row, parent, false);
 
+        textViewWeek = (TextView)rowView.findViewById(R.id.textView2);
+
         // Get the TextView object
         tvDG = (TextView)rowView.findViewById(R.id.textViewDG);
         // Get the ImageView object
@@ -49,7 +51,7 @@ public class DGAdapter extends ArrayAdapter<dailyGrade> {
         // Set the TextView to show the food
 
         tvDG.setText(currentdG.getDg());
-        textViewWeek.append(currentdG.getWeek());
+        textViewWeek.setText(currentdG.getWeek());
         // Set the image to star or nostar accordingly
         // Return the nicely done up View to the ListView
         return rowView;
