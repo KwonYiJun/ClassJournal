@@ -9,6 +9,7 @@
     android:weightSum="1">
 
     <ListView
+        android:id="@+id/ListViewInfo"
         android:layout_width="match_parent"
         android:layout_height="426dp"
         android:layout_weight="0.74" />
