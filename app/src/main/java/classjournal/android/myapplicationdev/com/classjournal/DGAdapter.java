@@ -51,7 +51,7 @@ public class DGAdapter extends ArrayAdapter<dailyGrade> {
         // Set the TextView to show the food
 
         tvDG.setText(currentdG.getDg());
-        textViewWeek.setText(currentdG.getWeek());
+        textViewWeek.append(currentdG.getWeek());
         // Set the image to star or nostar accordingly
         // Return the nicely done up View to the ListView
         return rowView;
