@@ -16,6 +16,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
 /**
  * Created by 15031795 on 2/5/2017.
  */
@@ -26,6 +27,7 @@ public class InfoActivity extends AppCompatActivity {
     ListView lvInfo;
     ArrayAdapter aa;
     ArrayList<dailyGrade> dG;
+    Button btnInfo;
 
 
     @Override
@@ -43,6 +45,16 @@ public class InfoActivity extends AppCompatActivity {
         aa = new DGAdapter(this, R.layout.row, dG);
         lvInfo.setAdapter(aa);
 
+        btnInfo = (Button) findViewById(R.id.btnInfo);
+        btnInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent dipIntent = new Intent(Intent.ACTION_VIEW);
+                dipIntent.setData(Uri.parse("http://www.rp.edu.sg/Diploma_in_Mobile_Software_Development_(R47).aspx"));
+                startActivity(dipIntent);
+            }
+        });
     }
+
 }
