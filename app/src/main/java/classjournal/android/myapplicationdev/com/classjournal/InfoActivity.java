@@ -38,9 +38,9 @@ public class InfoActivity extends AppCompatActivity {
         lvInfo = (ListView)findViewById(R.id.ListViewInfo);
 
         dG = new ArrayList<dailyGrade>();
-        dG.add(new dailyGrade("1", "B"));
-        dG.add(new dailyGrade("2", "C"));
-        dG.add(new dailyGrade("3", "A"));
+        dG.add(new dailyGrade(1, "B"));
+        dG.add(new dailyGrade(2, "C"));
+        dG.add(new dailyGrade(3, "A"));
 
         aa = new DGAdapter(this, R.layout.row, dG);
         lvInfo.setAdapter(aa);

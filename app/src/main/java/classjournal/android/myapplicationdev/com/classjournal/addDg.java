@@ -19,8 +19,11 @@ public class addDg extends AppCompatActivity {
     TextView tvWeek;
     dailyGrade dailyGrade;
     ArrayList<dailyGrade> dailyGrades;
+    RadioGroup rg;
+    RadioButton rb;
+    Button btn;
 
-
+    int selectedButtonId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +31,10 @@ public class addDg extends AppCompatActivity {
 
         dailyGrades = new ArrayList<dailyGrade>();
         tvWeek = (TextView)findViewById(R.id.textViewWeek);
+
+        Intent intentReceived = getIntent();
+        String weeks = intentReceived.getStringExtra("week");
+        tvWeek.setText("Week: " + weeks);
 
         Intent intent = getIntent();
         final String size = intent.getStringExtra("size");

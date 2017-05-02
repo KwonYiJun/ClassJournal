@@ -7,19 +7,19 @@ import java.io.Serializable;
  */
 
 public class dailyGrade implements Serializable{
-    private String week;
+    private int week;
     private String dg;
 
-    public dailyGrade(String week, String dg) {
+    public dailyGrade(int week, String dg) {
         this.week = week;
         this.dg = dg;
     }
 
-    public String getWeek() {
+    public int getWeek() {
         return week;
     }
 
-    public void setWeek(String week) {
+    public void setWeek(int week) {
         this.week = week;
     }
 
