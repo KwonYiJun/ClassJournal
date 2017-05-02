@@ -23,7 +23,6 @@ public class addDg extends AppCompatActivity {
     RadioButton rb;
     Button btn;
 
-    int selectedButtonId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,26 +30,25 @@ public class addDg extends AppCompatActivity {
 
         dailyGrades = new ArrayList<dailyGrade>();
         tvWeek = (TextView)findViewById(R.id.textViewWeek);
+        btn = (Button) findViewById(R. id. buttonSubmit);
 
         Intent intentReceived = getIntent();
         String weeks = intentReceived.getStringExtra("week");
-        tvWeek.setText("Week: " + weeks);
+        tvWeek.setText("Week " + weeks);
 
         Intent intent = getIntent();
-        final String size = intent.getStringExtra("size");
 
         dailyGrade grade = (dailyGrade) intent.getSerializableExtra("dg");
 
-        Button btn = (Button) findViewById(R. id. buttonSubmit);
         btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View arg0) {
                 // Get the RadioGroup object
-                RadioGroup rg = (RadioGroup) findViewById(R.id.rg);
+                rg = (RadioGroup) findViewById(R.id.rg);
                 // Get the Id of the selected radio button in the RadioGroup
                 int selectedButtonId = rg.getCheckedRadioButtonId();
                 // Get the radio button object from the Id we had gotten above
-                RadioButton rb = (RadioButton) findViewById(selectedButtonId);
+                rb = (RadioButton) findViewById(selectedButtonId);
 
                 Intent i = new Intent();
                 i.putExtra("grade", rb.getText().toString());

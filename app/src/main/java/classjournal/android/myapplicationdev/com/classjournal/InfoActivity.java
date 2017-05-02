@@ -29,6 +29,9 @@ public class InfoActivity extends AppCompatActivity {
     ArrayList<dailyGrade> dG;
     Button btnInfo, btnEmail, btnAdd;
 
+    int sizeOfWeeks;
+    int requestCodeForGrade = 1;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -63,9 +66,10 @@ public class InfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent add = new Intent(InfoActivity.this, addDg.class);
-                add.putExtra("size", dG.size()+1);
-                startActivity(add);
+                sizeOfWeeks = dG.size() + 1;
+                Intent weeks = new Intent(InfoActivity.this, addDg.class);
+                weeks.putExtra("week", dG.size() + 1 + "");
+                startActivityForResult(weeks, requestCodeForGrade);
             }
         });
 
