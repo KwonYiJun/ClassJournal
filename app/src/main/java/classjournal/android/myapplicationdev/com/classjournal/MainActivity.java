@@ -32,9 +32,7 @@ public class MainActivity extends AppCompatActivity {
         lvModule.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String year = al.get(position).toString();
                 Intent i = new Intent(MainActivity.this, InfoActivity.class);
-//                i.putExtra("year", year);
                 startActivity(i);
             }
         });
