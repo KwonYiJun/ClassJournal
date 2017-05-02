@@ -27,7 +27,7 @@ public class DGAdapter extends ArrayAdapter<dailyGrade> {
         // Store Context object as we would need to use it later
         this.context = context;
     }
-
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // The usual way to get the LayoutInflater object to
         //  "inflate" the XML file into a View object
@@ -40,8 +40,8 @@ public class DGAdapter extends ArrayAdapter<dailyGrade> {
 
         // Get the TextView object
         tvDG = (TextView)rowView.findViewById(R.id.textViewDG);
-        // Get the ImageView object
-        ivDG = (ImageView)rowView.findViewById(R.id.imageViewDG);
+//        // Get the ImageView object
+//        ivDG = (ImageView)rowView.findViewById(R.id.imageViewDG);
 
 
         // The parameter "position" is the index of the
