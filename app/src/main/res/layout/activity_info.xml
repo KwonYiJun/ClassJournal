@@ -4,6 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="classjournal.android.myapplicationdev.com.classjournal.MainActivity">
+    android:orientation="vertical"
+    tools:context="classjournal.android.myapplicationdev.com.classjournal.MainActivity"
+    android:weightSum="1">
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="426dp"
+        android:layout_weight="0.74" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnInfo"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="Info" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.16"
+            android:text="Add" />
+
+        <Button
+            android:id="@+id/btnEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.17"
+            android:text="Email Faci" />
+    </LinearLayout>
 
 </LinearLayout>
