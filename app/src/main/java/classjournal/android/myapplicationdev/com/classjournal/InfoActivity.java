@@ -95,4 +95,26 @@ public class InfoActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Only handle when 2nd activity closed normally
+        //  and data contains something
+        if (resultCode == RESULT_OK) {
+            if (data != null) {
+                // Get data passed back from 2nd activity
+                String like = data.getStringExtra("grade");
+                // Get data passed back from 2nd activity
+
+
+                if (requestCode == requestCodeForGrade) {
+                    dG.add(new dailyGrade(sizeOfWeeks, like));
+                    aa.notifyDataSetChanged();
+                }
+
+            }
+        }
+    }
+
 }
