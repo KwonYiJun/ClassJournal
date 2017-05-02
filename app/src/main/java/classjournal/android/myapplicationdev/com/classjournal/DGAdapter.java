@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class DGAdapter extends ArrayAdapter<dailyGrade> {
     private ArrayList<dailyGrade> dG;
     private Context context;
-    private TextView tvDG;
+    private TextView tvDG, textViewWeek;
     private ImageView ivDG;
 
     public DGAdapter(Context context, int resource, ArrayList<dailyGrade> objects){
@@ -49,7 +49,7 @@ public class DGAdapter extends ArrayAdapter<dailyGrade> {
         // Set the TextView to show the food
 
         tvDG.setText(currentdG.getDg());
-        ///somtheng
+        textViewWeek.append(currentdG.getWeek());
         // Set the image to star or nostar accordingly
         // Return the nicely done up View to the ListView
         return rowView;

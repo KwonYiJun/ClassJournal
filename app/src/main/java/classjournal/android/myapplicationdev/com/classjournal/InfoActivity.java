@@ -27,7 +27,7 @@ public class InfoActivity extends AppCompatActivity {
     ListView lvInfo;
     ArrayAdapter aa;
     ArrayList<dailyGrade> dG;
-    Button btnInfo;
+    Button btnInfo, btnEmail, btnAdd;
 
 
     @Override
@@ -46,6 +46,9 @@ public class InfoActivity extends AppCompatActivity {
         lvInfo.setAdapter(aa);
 
         btnInfo = (Button) findViewById(R.id.btnInfo);
+        btnAdd = (Button) findViewById(R.id.btnAdd);
+        btnEmail = (Button) findViewById(R.id.btnEmail);
+
         btnInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +56,37 @@ public class InfoActivity extends AppCompatActivity {
                 Intent dipIntent = new Intent(Intent.ACTION_VIEW);
                 dipIntent.setData(Uri.parse("http://www.rp.edu.sg/Diploma_in_Mobile_Software_Development_(R47).aspx"));
                 startActivity(dipIntent);
+            }
+        });
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent add = new Intent(InfoActivity.this, addDg.class);
+                add.putExtra("size", dG.size()+1);
+                startActivity(add);
+            }
+        });
+
+        btnEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent email = new Intent(Intent.ACTION_SEND);
+                email.putExtra(Intent.EXTRA_EMAIL,
+                        new String[]{"jason_lim@rp.edu.sg"});
+                email.putExtra(Intent.EXTRA_SUBJECT,
+                        "Test Email from C347");
+                email.putExtra(Intent.EXTRA_TEXT,
+                        "Hi faci \n\n I am.... \n Please read my remarks so far, thank you! \n" +
+                                "" );
+                // This MIME type indicates email
+                email.setType("message/rfc822");
+                // createChooser shows user a list of app that can handle
+                // this MIME type, which is, email
+                startActivity(Intent.createChooser(email,
+                        "Choose an Email client :"));
+
             }
         });
     }

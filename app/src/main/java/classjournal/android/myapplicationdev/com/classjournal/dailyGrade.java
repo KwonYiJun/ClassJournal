@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by 15031795 on 2/5/2017.
  */
 
-public class dailyGrade  implements Serializable{
+public class dailyGrade implements Serializable{
     private String week;
     private String dg;
 
